@@ -1,0 +1,79 @@
+
+
+
+
+
+// Array para armazenar as tarefas
+let tasks = [];
+
+// Função para obter as tarefas
+function getTasks(id, name, completed) {
+    return tasks;
+}
+
+// Função para adicionar uma nova tarefa
+function addTask(taskName) {
+    const newTask = {
+        id: tasks.length > 0 ? tasks[tasks.length - 1].id + 1 : 1,
+        name: taskName,
+        completed: false
+    };
+    tasks = [...tasks, newTask];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Função para remover uma tarefa
+function removeTask(taskId) {
+    tasks = tasks.
+    tasks =
+filter(task => task.id !== taskId);
+}
+
+
+
+
+
+
+
+
+
+
+
+// Função para atualizar uma tarefa
+function updateTask(taskId, updatedProperties) {
+    const taskIndex = tasks.findIndex(task => task.id === taskId);
+    if (taskIndex !== -1) {
+        tasks[taskIndex] = {
+            ...tasks[taskIndex],
+            ...updatedProperties
+        };
+    }
+}
+
+
+       
+// Exportando as funções
+module.exports = {
+    getTasks,
+    addTask,
+    removeTask,
+    updateTask
+};
